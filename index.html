@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Krutoi3232 | Обучение складскому делу — Даня</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
@@ -12,8 +12,10 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+        /* Кастомный скролл */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #1e1e1e;
@@ -22,64 +24,74 @@
             background: linear-gradient(45deg, #ff7b00, #b85c00);
             border-radius: 10px;
         }
+        
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #0a0a0a;
             color: #f0f0f0;
             line-height: 1.5;
             overflow-x: hidden;
         }
+        
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
+        
+        /* Стеклянные карточки */
         .glass-card {
             background: rgba(20, 20, 30, 0.85);
             backdrop-filter: blur(12px);
-            border-radius: 28px;
+            border-radius: 24px;
             border: 1px solid rgba(255, 123, 0, 0.3);
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
             transition: all 0.35s ease;
         }
+        
         .glass-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 28px 40px -12px rgba(255, 123, 0, 0.4);
-            border-color: rgba(255, 123, 0, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 28px 40px -12px rgba(255, 123, 0, 0.3);
+            border-color: rgba(255, 123, 0, 0.6);
         }
+        
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             font-weight: 800;
             background: linear-gradient(135deg, #ffffff, #ffae6e);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
+        
         .btn {
             display: inline-block;
             background: linear-gradient(95deg, #ff7b00, #ff4500);
-            padding: 14px 36px;
+            padding: 14px 32px;
             border-radius: 60px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border: none;
             color: white;
             cursor: pointer;
             transition: all 0.25s ease;
             box-shadow: 0 8px 18px rgba(255, 68, 0, 0.3);
         }
+        
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 15px 28px rgba(255, 68, 0, 0.5);
         }
+        
+        /* Шапка */
         .top-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 16px 32px;
+            padding: 12px 20px;
             background: rgba(10,10,10,0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
@@ -89,25 +101,30 @@
             flex-wrap: wrap;
             border-bottom: 1px solid rgba(255,123,0,0.3);
         }
+        
         .logo-small {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 800;
         }
+        
         .logo-small span {
             color: #ff7b00;
         }
+        
         .timer-badge {
             background: rgba(0,0,0,0.6);
-            padding: 6px 16px;
+            padding: 5px 12px;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             border-left: 3px solid #ff7b00;
         }
+        
         .timer-badge i {
-            margin-right: 8px;
+            margin-right: 6px;
             color: #ff7b00;
         }
-        /* HERO С ЛОКАЛЬНЫМ ФОТО warehouse.jpg */
+        
+        /* Hero с фото склада */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -115,226 +132,352 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), 
-                        url('warehouse.jpg') center/cover fixed;
-            background-attachment: fixed;
-            padding-top: 80px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('warehouse.jpg') center/cover;
+            background-attachment: scroll;
+            padding-top: 70px;
         }
+        
         .hero-content {
             max-width: 900px;
             padding: 20px;
             z-index: 2;
             position: relative;
         }
+        
         .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
             text-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
+        
         .hero h1 span {
             color: #ff7b00;
         }
+        
         .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
             font-weight: 500;
             text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
+        
         .hero .owner {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             opacity: 0.95;
         }
+        
+        /* О Дане */
         .about {
-            padding: 100px 0;
+            padding: 60px 0;
             background: radial-gradient(circle at 10% 30%, #121212, #050505);
         }
+        
         .about-grid {
             display: flex;
-            gap: 50px;
+            gap: 30px;
             align-items: center;
-            flex-wrap: wrap;
-        }
-        .about-img {
-            flex: 1;
-            min-width: 260px;
-            border-radius: 32px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #ff7b00, #ff4500);
-            padding: 5px;
-        }
-        .about-img img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 28px;
-            display: block;
-        }
-        .about-text {
-            flex: 1.5;
-        }
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #ccc;
-        }
-        .check-list {
-            list-style: none;
-        }
-        .check-list li {
-            margin: 12px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .check-list i {
-            color: #ff7b00;
-            width: 28px;
-        }
-        .services {
-            padding: 100px 0;
-            background: #0c0c0c;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 35px;
-        }
-        .service-card {
-            padding: 40px 24px;
+            flex-direction: column;
             text-align: center;
         }
-        .service-card i {
-            font-size: 3.3rem;
-            color: #ff7b00;
-            margin-bottom: 20px;
+        
+        .about-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff7b00, #ff4500);
+            padding: 4px;
+            margin: 0 auto;
         }
-        .service-card h3 {
-            font-size: 1.7rem;
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+        
+        .about-text h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .about-text p {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            color: #ccc;
+        }
+        
+        .check-list {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .check-list li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .check-list i {
+            color: #ff7b00;
+            width: 24px;
+        }
+        
+        /* Услуги */
+        .services {
+            padding: 60px 0;
+            background: #0c0c0c;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .service-card {
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: #ff7b00;
             margin-bottom: 15px;
         }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
         .service-card p {
             color: #bdbdbd;
+            font-size: 0.9rem;
         }
+        
+        /* Процесс */
         .process {
-            padding: 100px 0;
+            padding: 60px 0;
             background: linear-gradient(115deg, #101010 0%, #1a1a1a 100%);
         }
+        
         .steps-wrapper {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
+            flex-direction: column;
         }
+        
         .step-item {
-            flex: 1;
-            min-width: 250px;
             background: rgba(255,255,255,0.05);
-            border-radius: 32px;
-            padding: 35px 20px;
+            border-radius: 24px;
+            padding: 25px 20px;
             text-align: center;
             transition: 0.3s;
             border: 1px solid rgba(255,123,0,0.2);
         }
-        .step-item:hover {
-            transform: translateY(-8px);
-            background: rgba(255,123,0,0.1);
-            border-color: #ff7b00;
-        }
+        
         .step-num {
-            width: 65px;
-            height: 65px;
+            width: 50px;
+            height: 50px;
             background: #ff7b00;
-            border-radius: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            margin: 0 auto 25px;
+            margin: 0 auto 15px;
         }
+        
+        .step-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .step-item p {
+            font-size: 0.9rem;
+        }
+        
+        /* Форма */
         .contact-form-section {
-            padding: 100px 0;
+            padding: 60px 0;
             background: linear-gradient(135deg, #0d1117, #0a0a0a);
         }
+        
         .form-card {
             max-width: 620px;
             margin: 0 auto;
-            padding: 48px 40px;
-            border-radius: 48px;
+            padding: 35px 25px;
+            border-radius: 32px;
         }
+        
+        .form-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 18px;
         }
+        
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 16px 20px;
+            padding: 14px 18px;
             background: rgba(30,30,40,0.9);
             border: 1px solid rgba(255,123,0,0.4);
             border-radius: 48px;
             color: white;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
+        
         .form-group textarea {
-            border-radius: 28px;
+            border-radius: 24px;
             resize: vertical;
         }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #ff7b00;
-        }
+        
+        /* Футер */
         .footer {
             background: #050505;
-            padding: 50px 0 30px;
+            padding: 40px 0 25px;
             border-top: 1px solid #ff7b0033;
         }
+        
         .footer-inner {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 25px;
+            text-align: center;
+            flex-direction: column;
         }
+        
         .footer-col h4 {
             color: #ff7b00;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
         }
-        .footer-col p, .footer-col a {
+        
+        .footer-col p {
             color: #aaa;
-            text-decoration: none;
+            font-size: 0.85rem;
         }
+        
         .social-icons i {
             font-size: 1.8rem;
-            margin-right: 15px;
+            margin: 0 8px;
             color: #ff7b00;
             cursor: pointer;
-            transition: 0.2s;
         }
-        .social-icons i:hover {
-            transform: scale(1.1);
-        }
+        
         .copyright {
             text-align: center;
-            margin-top: 45px;
+            margin-top: 30px;
             padding-top: 20px;
             border-top: 1px solid #222;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #777;
         }
-        @media (max-width: 800px) {
-            .section-title { font-size: 2rem; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero h2 { font-size: 1.3rem; }
-            .about-grid { flex-direction: column; text-align: center; }
-            .check-list li { justify-content: center; }
-            .top-bar { padding: 10px 16px; }
-            .logo-small { font-size: 1rem; }
-            .timer-badge { font-size: 0.65rem; }
+        
+        /* Планшеты (от 600px) */
+        @media (min-width: 600px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .steps-wrapper {
+                flex-direction: row;
+            }
+            
+            .step-item {
+                flex: 1;
+            }
+            
+            .footer-inner {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+            }
+            
+            .about-grid {
+                flex-direction: row;
+                text-align: left;
+                gap: 40px;
+            }
+            
+            .about-img {
+                width: 280px;
+                height: 280px;
+            }
+        }
+        
+        /* Десктоп (от 900px) */
+        @media (min-width: 900px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .container {
+                padding: 0 24px;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+                margin-bottom: 3rem;
+            }
+            
             .hero {
-                background-attachment: scroll;
+                background-attachment: fixed;
+            }
+        }
+        
+        /* Для телефонов с отступом от края */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .top-bar {
+                padding: 10px 16px;
+            }
+            
+            .timer-badge {
+                font-size: 0.6rem;
+                padding: 4px 8px;
+            }
+            
+            .logo-small {
+                font-size: 1rem;
             }
         }
     </style>
@@ -348,7 +491,7 @@
     </div>
 </div>
 
-<!-- HERO С ФОТО warehouse.jpg -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
         <h1>Kruto<span>i</span>|3232</h1>
@@ -358,7 +501,7 @@
     </div>
 </section>
 
-<!-- О ДАНЕ С ФОТО danya.jpg -->
+<!-- О ДАНЕ -->
 <section class="about">
     <div class="container">
         <div class="about-grid">
@@ -367,11 +510,11 @@
             </div>
             <div class="about-text">
                 <h3>Даня — владелец <span style="color:#ff7b00">Krutoi3232</span></h3>
-                <p>8 лет на складах Ozon, Wildberries и ПЭК. Провёл более 200 тренингов по выгрузке, приемке и учёту товара. Обучил 700+ человек. Знает всё о рохле, стеллажах и таблицах!</p>
+                <p>8 лет на складах Ozon, Wildberries и ПЭК. Провёл более 200 тренингов по выгрузке, приемке и учёту товара. Обучил 700+ человек.</p>
                 <ul class="check-list">
-                    <li><i class="fas fa-hard-hat"></i> Сертифицированный инструктор по складам</li>
+                    <li><i class="fas fa-hard-hat"></i> Сертифицированный инструктор</li>
                     <li><i class="fas fa-chart-line"></i> Автор методики "Склад без хаоса"</li>
-                    <li><i class="fas fa-tasks"></i> 100% трудоустройство после стажировки</li>
+                    <li><i class="fas fa-tasks"></i> 100% трудоустройство</li>
                 </ul>
             </div>
         </div>
@@ -386,57 +529,57 @@
             <div class="service-card glass-card">
                 <i class="fas fa-clipboard-list"></i>
                 <h3>Приемка товара</h3>
-                <p>Сверка накладных, контроль брака, акты расхождений</p>
+                <p>Сверка накладных, контроль брака</p>
             </div>
             <div class="service-card glass-card">
                 <i class="fas fa-pallet"></i>
                 <h3>Работа с рохлей</h3>
-                <p>Гидравлическая тележка: маневры, техника безопасности</p>
+                <p>Маневры, техника безопасности</p>
             </div>
             <div class="service-card glass-card">
                 <i class="fas fa-file-excel"></i>
                 <h3>Учет + Excel</h3>
-                <p>Составление таблиц, ведение стеллажной отчетности</p>
+                <p>Таблицы, маркировка, отчетность</p>
             </div>
             <div class="service-card glass-card">
                 <i class="fas fa-truck"></i>
                 <h3>Выгрузка / загрузка</h3>
-                <p>Оптимизация времени, укладка паллет, безопасные нормы</p>
+                <p>Укладка паллет, оптимизация</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ПРОЦЕСС ОБУЧЕНИЯ -->
+<!-- ПРОЦЕСС -->
 <section class="process">
     <div class="container">
         <h2 class="section-title">⚙️ Как проходит обучение</h2>
         <div class="steps-wrapper">
             <div class="step-item">
                 <div class="step-num">1</div>
-                <h3>Теория + видео</h3>
-                <p>Изучаем складские процессы и ТБ</p>
+                <h3>Теория</h3>
+                <p>Основы склада и ТБ</p>
             </div>
             <div class="step-item">
                 <div class="step-num">2</div>
                 <h3>Симуляция</h3>
-                <p>Учебный склад: рохля, приемка, бракераж</p>
+                <p>Практика на учебном складе</p>
             </div>
             <div class="step-item">
                 <div class="step-num">3</div>
                 <h3>Стажировка</h3>
-                <p>Работа на складе-партнёре с наставником</p>
+                <p>Работа с наставником</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ФОРМА СВЯЗИ -->
+<!-- ФОРМА -->
 <section class="contact-form-section" id="contact">
     <div class="container">
         <div class="form-card glass-card">
-            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem;">📞 Свяжись с Даней</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Оставьте заявку — и мы подберем программу под ваш склад</p>
+            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 1rem;">📞 Свяжись с Даней</h2>
+            <p style="text-align: center; margin-bottom: 25px;">Оставьте заявку — подберем программу</p>
             <form id="callbackForm">
                 <div class="form-group">
                     <input type="text" id="name" placeholder="Ваше имя" required>
@@ -445,7 +588,7 @@
                     <input type="tel" id="phone" placeholder="Номер телефона" required>
                 </div>
                 <div class="form-group">
-                    <textarea rows="3" id="message" placeholder="Сообщение (какое обучение интересует?)"></textarea>
+                    <textarea rows="3" id="message" placeholder="Сообщение"></textarea>
                 </div>
                 <button type="submit" class="btn">Отправить заявку</button>
             </form>
@@ -460,7 +603,7 @@
         <div class="footer-inner">
             <div class="footer-col">
                 <h4>Kruto<span style="color:#ff7b00">i</span>|3232</h4>
-                <p>Обучение складскому персоналу с 2018 года.</p>
+                <p>Обучение персонала складу</p>
             </div>
             <div class="footer-col">
                 <h4>Контакты</h4>
@@ -481,74 +624,38 @@
 </footer>
 
 <script>
-    ScrollReveal({ reset: false, distance: '40px', duration: 800, interval: 100 });
+    ScrollReveal({ reset: false, distance: '30px', duration: 700, interval: 80 });
     ScrollReveal().reveal('.hero-content', { origin: 'bottom' });
     ScrollReveal().reveal('.about-grid', { origin: 'left' });
-    ScrollReveal().reveal('.service-card', { interval: 120, origin: 'bottom' });
-    ScrollReveal().reveal('.step-item', { interval: 100, origin: 'right' });
+    ScrollReveal().reveal('.service-card', { interval: 100, origin: 'bottom' });
+    ScrollReveal().reveal('.step-item', { interval: 80, origin: 'right' });
     ScrollReveal().reveal('.form-card', { origin: 'bottom' });
 
     function updateTimer() {
         const now = new Date();
         const dateStr = now.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', hour: '2-digit', minute:'2-digit' });
-        const timerDiv = document.getElementById('workTimer');
-        if (timerDiv) {
-            timerDiv.innerHTML = `<i class="fas fa-charging-station"></i> Работаем на результат | ${dateStr}`;
-        }
+        document.getElementById('workTimer').innerHTML = `<i class="fas fa-charging-station"></i> Работаем | ${dateStr}`;
     }
     updateTimer();
     setInterval(updateTimer, 60000);
 
-    const heroBtn = document.getElementById('heroBtn');
-    if (heroBtn) {
-        heroBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const formSection = document.getElementById('contact');
-            if (formSection) {
-                formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    }
+    document.getElementById('heroBtn').onclick = () => {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    };
 
     const form = document.getElementById('callbackForm');
-    const formMessageDiv = document.getElementById('formMessage');
-    
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const nameInput = document.getElementById('name');
-        const phoneInput = document.getElementById('phone');
-        const messageInput = document.getElementById('message');
-        
-        let isValid = true;
-        if (nameInput.value.trim() === '') {
-            nameInput.style.borderColor = '#ff4444';
-            isValid = false;
+    form.onsubmit = (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        if (!name || !phone) {
+            document.getElementById('formMessage').innerHTML = '<span style="color:#ff7b7b;">❌ Заполните имя и телефон</span>';
         } else {
-            nameInput.style.borderColor = 'rgba(255,123,0,0.4)';
+            document.getElementById('formMessage').innerHTML = '<span style="color:#7bff7b;">✅ Спасибо, Даня свяжется с вами!</span>';
+            form.reset();
         }
-        if (phoneInput.value.trim() === '') {
-            phoneInput.style.borderColor = '#ff4444';
-            isValid = false;
-        } else {
-            phoneInput.style.borderColor = 'rgba(255,123,0,0.4)';
-        }
-        
-        if (isValid) {
-            formMessageDiv.innerHTML = '<span style="color:#7bff7b;">✅ Спасибо, Даня свяжется с вами в ближайшее время!</span>';
-            nameInput.value = '';
-            phoneInput.value = '';
-            messageInput.value = '';
-            setTimeout(() => {
-                formMessageDiv.innerHTML = '';
-            }, 5000);
-        } else {
-            formMessageDiv.innerHTML = '<span style="color:#ff7b7b;">❌ Заполните имя и телефон</span>';
-            setTimeout(() => {
-                formMessageDiv.innerHTML = '';
-            }, 3000);
-        }
-    });
+        setTimeout(() => { document.getElementById('formMessage').innerHTML = ''; }, 4000);
+    };
 </script>
 </body>
 </html>
